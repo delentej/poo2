@@ -86,9 +86,6 @@ public class Session implements ActionListener, ListSelectionListener{
 		return this.port_dest;
 	}
 
-	public InetAddress get_addr_dest() {
-		return this.addr_dest;
-	}
 	
 	public void windows_session(String name) {
    	 session_sendButton = new JButton("SEND");

@@ -48,7 +48,7 @@ public class Session implements ActionListener, ListSelectionListener{
 		System.out.println(" ok ouverture de la session 3");
 	}
 	
-/*
+
 	public Session(String destinataire, String[] historique_conv) {		// session deja ouverte auparavant donc historique conv
 		this.user = destinataire;
 		windows_session(user);
@@ -57,7 +57,6 @@ public class Session implements ActionListener, ListSelectionListener{
 		message_recu(port);
 	}
 	
-*/
 	
 	public void envoie_de_message(String msg) {
 		// afficher le message sur la fenetre + envoie message + add_to_historique
@@ -81,14 +80,7 @@ public class Session implements ActionListener, ListSelectionListener{
 		ClientTCP MyClientTCP= new ClientTCP(this, port_dest,"CLOSE_SESSION",addr_dest);
 		MyClientTCP.start();
 	}
-	
-	public int get_port_dest() {
-		return this.port_dest;
-	}
 
-	public InetAddress get_addr_dest() {
-		return this.addr_dest;
-	}
 	
 	public void windows_session(String name) {
    	 session_sendButton = new JButton("SEND");

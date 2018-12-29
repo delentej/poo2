@@ -74,14 +74,10 @@ public class ServerTCP extends Thread{
 				else {	// si on est sur un aute port (mode message session)
 					BufferedReader in=new BufferedReader(new InputStreamReader(link.getInputStream()));
 					input=in.readLine();
-					if(input.equals("CLOSE_SESSION1")) {
+					if(input.equals("CLOSE_SESSION")) {
 						//afficher la session a ete fermée par votre correspondant 
-						ClientTCP MyClientTCP= new ClientTCP(MySessionUsed, MySessionUsed.get_port_dest(),"CLOSE_SESSION2",MySessionUsed.get_addr_dest());
-						MyClientTCP.start();
-						link.close();
-						flag=0;
-					}
-					if(input.equals("CLOSE_SESSION2")) {
+						PrintWriter out4=new PrintWriter(link.getOutputStream(),true);		// on renvoie CLOSE SESSION pour que lautrre utilisateur puisse fermer son socket
+						out4.println(input);
 						link.close();
 						flag=0;
 					}

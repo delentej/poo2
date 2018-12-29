@@ -155,7 +155,6 @@ public class Sessions implements ActionListener{
 		if (event.getActionCommand().equals("YES")) {
     		int i=MyLogin.list.getSelectedIndex();
 			demande_new_session(MyLogin.MyList_user.get_user(i));
-			System.out.println("demain tout ira bien");
     		//new_session("choukou","1930");
 			MyLogin.list.clearSelection();
 			flag_ask_session=0;

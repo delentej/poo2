@@ -82,8 +82,7 @@ public class ServerTCP extends Thread{
 						flag=0;
 					}
 					if(input.equals("CLOSE_SESSION2")) {
-						link.close();
-						flag=0;
+					}
 					}
 					//afficher le message sur la bonne session
 					MySessionUsed.listmodel.addElement(MySessionUsed.get_user_dest() +  " : " + input );

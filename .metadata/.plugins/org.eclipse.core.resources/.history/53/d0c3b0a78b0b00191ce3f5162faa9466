@@ -79,6 +79,8 @@ public class ServerTCP extends Thread{
 						ClientTCP MyClientTCP= new ClientTCP(MySessionUsed, MySessionUsed.get_port_dest(),"CLOSE_SESSION2",MySessionUsed.get_addr_dest());
 						MyClientTCP.start();
 						link.close();
+						MySessionUsed.listmodel.addElement("SESSION FERMEE" );
+						MySessionUsed.list_conv.setModel(MySessionUsed.listmodel);
 						flag=0;
 					}
 					if(input.equals("CLOSE_SESSION2")) {

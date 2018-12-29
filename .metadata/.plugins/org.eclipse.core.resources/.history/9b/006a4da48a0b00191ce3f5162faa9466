@@ -81,14 +81,7 @@ public class Session implements ActionListener, ListSelectionListener{
 		ClientTCP MyClientTCP= new ClientTCP(this, port_dest,"CLOSE_SESSION",addr_dest);
 		MyClientTCP.start();
 	}
-	
-	public int get_port_dest() {
-		return this.port_dest;
-	}
 
-	public InetAddress get_addr_dest() {
-		return this.addr_dest;
-	}
 	
 	public void windows_session(String name) {
    	 session_sendButton = new JButton("SEND");
