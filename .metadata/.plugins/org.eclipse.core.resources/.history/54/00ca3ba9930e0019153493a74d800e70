@@ -66,8 +66,43 @@ public class login implements ActionListener, ListSelectionListener {
 			System.out.println(" # ");
 			MyList_user= new List_user(this);
 		}
-
 	/*
+	public login(Agent MyAgent, String nom) throws IOException {
+		this.MyAgent=MyAgent;
+		System.out.println("ok apres appel de l'agent dans login");
+		MyList_user= new List_user(this);
+		System.out.println("ok apres ajout dans la liste user");
+		try {
+			MyAddress=InetAddress.getLocalHost();
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.nom=nom;
+		if ( nom.equals("")) {
+			MyAgent.Set_nameLabel.setText("Wrong name");
+		}
+		else {
+			System.out.println(nom);
+			if ( check_name(nom)!=true) {
+				MyAgent.Set_nameLabel.setText("Wrong name");
+				//MyAgent.state="not_connected";
+			}
+			else {
+				System.out.println("ok test avant enlevage panel");
+				MyAgent.pane2.setVisible(false);//enlever le jpanel, setvisible(false) ???
+				MyAgent.state="connected";
+				System.out.println("ok test apres state connected");
+				MySessions = new Sessions(this);	// on peut nous contacter pour une session une fois que l'on est connecté
+				System.out.println("ok apres creation de session une fois connecte");
+				Address=MyAddress.toString();
+				MyList_user.send_new_name(nom);
+			}
+		}
+	}
+	*/
+	
+	
 	private boolean check_name(String nom){
 		MyList_user.ask_list_user();
 		String[] list_user= MyList_user.get_list_user();
@@ -79,23 +114,10 @@ public class login implements ActionListener, ListSelectionListener {
 			}
 		}
 		return true;
-	}*/
+	}
 	
 	
-	public void rename(String nom) {
-		if(MyList_user.check_name(nom)!=true) {
-			Set_renameLabel.setText("Wrong name");
-		}
-		else {
-			pane7.remove(pane4);
-	    	pane7.validate();
-			PrintName.setText("nom : " + nom);
-			MyList_user.send_new_name(nom, this.nom);
-			this.nom=nom;	
-		}
-}
 	
-	/*
 	public void rename(String nom) {
 			if(check_name(nom)!=true) {
 				Set_renameLabel.setText("Wrong name");
@@ -108,7 +130,7 @@ public class login implements ActionListener, ListSelectionListener {
 				this.nom=nom;	
 			}
 	}
-    */
+    
     
     public String get_name() {
     	return nom;
@@ -193,6 +215,13 @@ public class login implements ActionListener, ListSelectionListener {
 	            BorderFactory.createTitledBorder("Sessions"), 
 	            BorderFactory.createEmptyBorder(15,5,15,5)));
 		
+		
+		
+		
+		
+		
+		
+		
        MyAgent.MainPanel.add(pane3);
        MyAgent.MainPanel.add(pane7);
        MyAgent.MainPanel.remove(pane2);
@@ -272,7 +301,7 @@ public class login implements ActionListener, ListSelectionListener {
 	public void actionPerformed(ActionEvent event) {
 		if (event.getActionCommand().equals("OK")) {
 			nom=Set_nameTextField.getText();
-			if(MyList_user.check_name(nom)!=true){
+			if(check_name(nom)!=true){
 				Set_nameLabel.setText("Wrong name");
 			}
 			else {

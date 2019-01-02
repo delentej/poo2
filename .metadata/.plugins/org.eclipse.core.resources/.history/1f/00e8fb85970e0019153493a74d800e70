@@ -20,6 +20,7 @@ import com.sun.glass.events.KeyEvent;
 
 public class Session implements ActionListener, ListSelectionListener{
 	private String user;
+	private int num_session;
 	private int port;
 	private Sessions MySessions;
 	private int port_dest;

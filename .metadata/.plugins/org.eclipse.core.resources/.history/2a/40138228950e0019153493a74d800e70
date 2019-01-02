@@ -67,7 +67,7 @@ public class login implements ActionListener, ListSelectionListener {
 			MyList_user= new List_user(this);
 		}
 
-	/*
+	
 	private boolean check_name(String nom){
 		MyList_user.ask_list_user();
 		String[] list_user= MyList_user.get_list_user();
@@ -79,23 +79,10 @@ public class login implements ActionListener, ListSelectionListener {
 			}
 		}
 		return true;
-	}*/
+	}
 	
 	
-	public void rename(String nom) {
-		if(MyList_user.check_name(nom)!=true) {
-			Set_renameLabel.setText("Wrong name");
-		}
-		else {
-			pane7.remove(pane4);
-	    	pane7.validate();
-			PrintName.setText("nom : " + nom);
-			MyList_user.send_new_name(nom, this.nom);
-			this.nom=nom;	
-		}
-}
 	
-	/*
 	public void rename(String nom) {
 			if(check_name(nom)!=true) {
 				Set_renameLabel.setText("Wrong name");
@@ -108,7 +95,7 @@ public class login implements ActionListener, ListSelectionListener {
 				this.nom=nom;	
 			}
 	}
-    */
+    
     
     public String get_name() {
     	return nom;
@@ -272,7 +259,7 @@ public class login implements ActionListener, ListSelectionListener {
 	public void actionPerformed(ActionEvent event) {
 		if (event.getActionCommand().equals("OK")) {
 			nom=Set_nameTextField.getText();
-			if(MyList_user.check_name(nom)!=true){
+			if(check_name(nom)!=true){
 				Set_nameLabel.setText("Wrong name");
 			}
 			else {

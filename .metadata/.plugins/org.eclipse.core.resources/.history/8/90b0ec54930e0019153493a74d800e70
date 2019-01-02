@@ -20,8 +20,38 @@ public class Agent implements ActionListener{
 	JPanel MainPanel;
 	
 	JButton MainButton;
+	JButton Set_nameButton;
+	JTextField Set_nameTextField;
 	JPanel pane1;
 	JPanel pane2;
+	
+	public JLabel Set_nameLabel;
+	JButton RenameButton;
+	JLabel PrintName;
+	JPanel pane3;
+	JButton DisconnectButton;
+	
+	
+	public JLabel Set_renameLabel;
+	JPanel pane4;
+	JButton Set_renameButton;
+	JTextField Set_renameTextField;
+	
+	public JLabel ask_sessionLabel;
+	JPanel pane5;
+	JButton yesButton;
+	JButton noButton;
+	int flag_ask_session=0;
+	
+	
+	JButton session_sendButton;
+	JButton session_closeButton;
+	JTextField session_messageTextField;
+	JPanel pane6;
+	JLabel session_nameLabel;
+	
+	JPanel pane7;
+	
 	
 	
 	
