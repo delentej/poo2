@@ -306,6 +306,11 @@ public class login implements ActionListener, ListSelectionListener {
 			}	
 		}
 		
+		public void add_element_to_list(String new_name) {
+			listmodel.addElement(new_name);
+			list.setModel(listmodel);
+		}
+		
     
     
 	
